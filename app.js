@@ -35,6 +35,41 @@ app.use(bodyParser.json());
 app.use(session({store: sessionStore, secret: 'keyboard cat', resave: true, saveUninitialized: true, cookie: { path: '/', httpOnly: true, secure: false, maxAge: 365*24*60*60*1000}}));
 
 app
+.get('/register', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('register', {});
+})
+
+.get('/recipe', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('recipe', {});
+})
+
+.get('/my-top', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('my-top', {});
+})
+
+.get('/top-rated', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('top-rated', {});
+})
+
+.get('/top-viewed', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('index', {});
+})
+
+.get('/search', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('search', {});
+})
+
+.get('/index', function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.render('index', {});
+})
+
 .get('/', function (req, res) {
     res.setHeader("Content-Type", "text/html");
     res.render('index', {});
