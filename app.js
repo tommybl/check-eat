@@ -57,7 +57,7 @@ app
 
 .get('/top-viewed', function (req, res) {
     res.setHeader("Content-Type", "text/html");
-    res.render('index', {});
+    res.render('top-viewed', {});
 })
 
 .get('/search', function (req, res) {
