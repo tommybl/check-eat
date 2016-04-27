@@ -1,0 +1,166 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+h1{
+	clear: both;
+}
+
+.menu{
+	clear: left;
+}
+.register_slogan{
+	color:#ffffff;
+	margin-top:20px;
+}
+.list-group-item{
+	overflow: auto;
+	line-height: 135px;
+}
+.list-group-item img{
+	float:left;
+}
+.list-group-item h3{
+	margin-top:0px;
+	line-height: 135px;
+}
+.jumbotron{
+	overflow: auto;
+	padding-bottom: 5px;
+	padding-top: 45px;
+}
+.padding_top{
+	padding-top: 25px;
+}
+.user_info{
+	color:#ffffff;
+}
+.user_info button{
+	color: #333;
+}
+.my_top_btn{
+	background-color: #eee;
+	color: #333;
+	margin-left: 30px;
+}
+
+/* Homepages */
+
+.spacing{
+	height: 50px;
+}
+
+/* Dishes */
+.dishes .img-frame {
+    position: relative;
+    z-index: 10;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 2px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 400px;
+    cursor: pointer;
+}
+.dishes .img-frame img {
+    border-radius: 400px;
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.dishes .dish-details {
+    position: relative;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+/* Menu */
+
+.menu .menu-head {
+    position: relative;
+}
+
+.menu .menu-details {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+.br-red {
+    background-color: #f75353 !important;
+}
+.menu .menu-details li .menu-list-item {
+    padding: 12px 15px;
+    color: #fff;
+    border-top: 1px dashed rgba(0,0,0,0.15);
+}
+.menu .menu-details li:first-child .menu-list-item {
+    border-top: 0;
+}
+.menu .menu-details ul li i {
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+    border-radius: 30px;
+}
+.menu h3 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: inline-block;
+    margin-top: -45px;
+    padding: 5px 0;
+    font-size: 60px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+menu img.menu-img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+}
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+.br-green {
+    background-color: #51d466 !important;
+}
+.br-lblue {
+    background-color: #32c8de !important;
+}
+.menu .menu-details ul li a {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Recipe */
+.recipe .score{
+	font-size: 30px;
+    margin-top: 30px;
+}

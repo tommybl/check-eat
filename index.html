@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Check-Eat</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Check-Eat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right user_info">
+            Bonjour XXXX <a href="my_top.html" class="btn my_top_btn">Mes recettes favorites</a>
+          </div>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Se connecter</button>
+            <p class="register_slogan">Vous n'avez pas de compte ? <a href="register.html">Créer en un dès maintenant</a></p>
+          </form>
+          <ul class="nav navbar-nav menu">
+            <li><a href="top_viewed.html">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
+            <li><a href="top_rated.html">Recettes les mieux notées</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="padding_top col-sm-7">
+          <div class="alert alert-success" role="alert">
+            <strong>Bienvenue!</strong> Vous pouvez maintenant vous rendre sur votre compte
+          </div>
+          <div class="alert alert-danger" role="alert">
+            <strong>Oups!</strong> Une erreur est survenue : 
+            <span>Mot de passe incorrect pour cet utilisateur</span>
+            <span>Utilisateur incorrect</span>
+          </div>
+        </div>
+        <h1>Bienvenue sur Check-Eat !</h1>
+        <p>Vous pouvez chercher une recette grâce à la barre de recherche</p>
+        <div class="form-group">
+              <input type="text" placeholder="Nom de la recette" class="form-control">
+            </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row dishes">
+        <div class="col-md-3 col-sm-6"> 
+          <div class="dishes-item-container">
+            <div class="img-frame">
+              <img src="img/dish/dish5.jpg" class="img-responsive" alt="">
+              <div class="img-frame-hover">
+                <a href="#"><i class="fa fa-cutlery"></i></a>
+              </div>
+            </div>
+            <div class="dish-details">
+              <h3>Plats chinois</h3>
+              <p>At vero eos et accusal gusto for ides residuum lores.</p>
+              <a href="#" class="btn btn-danger btn-sm">Lire plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="dishes-item-container">
+            <div class="img-frame">
+              <img src="img/dish/dish6.jpg" class="img-responsive" alt="">
+              <div class="img-frame-hover">
+                <a href="#"><i class="fa fa-cutlery"></i></a>
+              </div>
+            </div>
+            <div class="dish-details">
+              <h3>Onion Rings Epicés</h3>
+              <p>At vero eos et accusal gusto for ides residuum lores.</p>
+              <a href="#" class="btn btn-danger btn-sm">Lire plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="dishes-item-container">
+            <div class="img-frame">
+              <img src="img/dish/dish7.jpg" class="img-responsive" alt="">
+              <div class="img-frame-hover">
+                <a href="#"><i class="fa fa-cutlery"></i></a>
+              </div>
+            </div>
+            <div class="dish-details">
+              <h3>Recettes au fromage</h3>
+              <p>At vero eos et accusal gusto for ides residuum lores.</p>
+              <a href="#" class="btn btn-danger btn-sm">Lire plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="dishes-item-container">
+            <div class="img-frame">
+              <img src="img/dish/dish8.jpg" class="img-responsive" alt="">
+              <div class="img-frame-hover">
+                <a href="#"><i class="fa fa-cutlery"></i></a>
+              </div>
+            </div>
+            <div class="dish-details">
+              <h3>Spicy Cheese Pizza</h3>
+              <p>At vero eos et accusal gusto for ides residuum lores.</p>
+              <a href="#" class="btn btn-danger btn-sm">Lire plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row spacing"></div>
+
+      <div class="row menu">
+        <div class="col-md-4 col-sm-4">
+          <div class="menu-head">
+            <img class="menu-img img-responsive img-thumbnail" src="img/menu/menu1.jpg" alt="">
+            <h3>Poissons</h3>
+            <div class="title-border br-red"></div>
+          </div>
+          <div class="menu-details br-red">
+            <ul class="list-unstyled">
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Poisson</a> 
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Consequent</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Praising Pain</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Exception Tint</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Laborious Rhys</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="menu-head">
+            <img class="menu-img img-responsive img-thumbnail" src="img/menu/menu2.jpg" alt="">
+            <h3>Poulet</h3>
+            <div class="title-border br-green"></div>
+          </div>
+          <div class="menu-details br-green">
+            <ul class="list-unstyled">
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Poulet frit</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Poulet au curry</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Praising Pain</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Exception Tint</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Laborious Rhys</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="menu-head">
+            <img class="menu-img img-responsive img-thumbnail" src="img/menu/menu3.jpg" alt="">
+            <h3>Dessert</h3>
+            <div class="title-border br-lblue"></div>
+          </div>
+          <div class="menu-details br-lblue">
+            <ul class="list-unstyled">
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Mousse au chocolat</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Coupe vanille</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Praising Pain</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Exception Tint</a>
+                </div>
+              </li>
+              <li>
+                <div class="menu-list-item">
+                  <i class="glyphicon glyphicon-menu-right"></i> <a href="#">Laborious Rhys</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

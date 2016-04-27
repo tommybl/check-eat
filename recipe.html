@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Check-Eat</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Check-Eat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right user_info">
+            Bonjour XXXX <a href="my_top.html" class="btn my_top_btn">Mes recettes favorites</a>
+          </div>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Se connecter</button>
+            <p class="register_slogan">Vous n'avez pas de compte ? <a href="register.html">Créer en un dès maintenant</a></p>
+          </form>
+          <ul class="nav navbar-nav menu">
+            <li><a href="top_viewed.html">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
+            <li><a href="top_rated.html">Recettes les mieux notées</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron recipe">
+      <div class="container">
+        <div class="padding_top col-sm-7">
+          <div class="alert alert-success" role="alert">
+            <strong>Bienvenue!</strong> Vous pouvez maintenant vous rendre sur votre compte
+          </div>
+          <div class="alert alert-danger" role="alert">
+            <strong>Oups!</strong> Une erreur est survenue : 
+            <span>Mot de passe incorrect pour cet utilisateur</span>
+            <span>Utilisateur incorrect</span>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <h1>Petits muffins  aux myrtilles</h1>
+        </div>
+        <div class="score col-sm-2">
+          <span class="score">15</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-sm-5">
+          <img src="img/recipe/muffin.jpg"/>
+        </div>
+        <div class="col-sm-7">
+          Temps de préparation : 25 minutes
+          Temps de cuisson : 25 minutes
+
+          Ingrédients (pour 6 personnes) :
+          - 1 yaourt nature (conserver le pot comme mesure) 
+          - 1 yaourt et demi de sucre en poudre
+          - 3 oeufs moyens
+          - 1/4 de yaourt d'huile
+          - 3 yaourts de farine
+          - 1/2 bol de lait
+          - 1 sachet de levure
+          - 1 jus de citron
+          - 125 à 150 g de myrtilles fraîches
+
+          Préparation de la recette :
+
+          Préchauffer votre four à 160°C. 
+          Mélanger tous les ingrédients dans l'ordre donné ci-dessus, en prenant le soin de couper les myrtilles en petits morceaux avant de les incorporer à la préparation. 
+          Dans un moule à petits cakes, déposer des moules en papier dans chaque creux. 
+          Verser un peu de la préparation dans chaque petit moule. 
+          Mettre au four pendant 20 min à 160°C. Les sortir quand ils commencent à dorer, et recommencer jusqu'à ce qu'il ne vous reste plus de pâte. 
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

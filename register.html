@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Check-Eat</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Check-Eat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Se connecter</button>
+            <p class="register_slogan">Vous n'avez pas de compte ? <a href="register.html">Créer en un dès maintenant</a></p>
+          </form>
+          <ul class="nav navbar-nav menu">
+            <li><a href="top_viewed.html">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
+            <li><a href="top_rated.html">Recettes les mieux notées</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="padding_top col-sm-7">
+          <div class="alert alert-success" role="alert">
+            <strong>Bienvenue!</strong> Vous pouvez maintenant vous connecter sur votre profil
+          </div>
+          <div class="alert alert-danger" role="alert">
+            <strong>Oups!</strong> Une erreur est survenue
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <form>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-secondary">S'enregistrer</button>
+          </div>
+        </div>
+      </form>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
