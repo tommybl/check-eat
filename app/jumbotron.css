@@ -34,6 +34,11 @@ h1{
 .padding_top{
 	padding-top: 25px;
 }
+.search_bar{
+    padding-left: 0px;
+    padding-bottom: 20px;
+}
+
 .user_info{
 	color:#ffffff;
 }
