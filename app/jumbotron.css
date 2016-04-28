@@ -8,6 +8,10 @@ h1{
 	clear: both;
 }
 
+img{
+     max-width: 100%;
+}
+
 .menu{
 	clear: left;
 }
