@@ -52,7 +52,9 @@
             <li><a href="top-viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
             <li><a href="top-rated">Recettes les mieux notées</a></li>
             <li><a href="search">Recherche</a></li>
+            <% if (user != undefined) { %>
             <li><a href="add-recipe">Ajouter</a></li>
+            <% } %>
           </ul>
         </div>
       </div>
@@ -78,7 +80,7 @@
         <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" name="mail" class="form-control" id="inputEmail3" placeholder="Email" required>
+            <input type="text" name="mail" class="form-control" id="inputEmail3" placeholder="Email" required>
           </div>
         </div>
         <div class="form-group row">

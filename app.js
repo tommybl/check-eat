@@ -18,7 +18,7 @@ mongodb.once('open', function (callback) {
   console.log("Successfully connected to mongodb");
   var UserSchema = mongoose.Schema({mail: String, password: String});
   User = mongoose.model('User', UserSchema);
-  var RecipeSchema = mongoose.Schema({title: String, content: String, image: {data: Buffer, contentType: String}, views: Number, rates: Number});
+  var RecipeSchema = mongoose.Schema({title: String, content: String, image: {data: Buffer, contentType: String}, views: Number, rates: Number, user: String});
   Recipe = mongoose.model('Recipe', RecipeSchema);
   var FavouriteSchema = mongoose.Schema({user: String, recipe: String});
   Favourite = mongoose.model('Favourite', FavouriteSchema);
@@ -134,24 +134,30 @@ app
 })
 
 .get('/add-recipe', function (req, res) {
-  res.setHeader("Content-Type", "text/html");
-  var success = req.query.success;
-  var error = req.query.error;
-  res.render('add-recipe', {
-    user: req.session.user,
-    success: success,
-    error: error,
-  });
+  if (req.session.user != undefined) {
+    res.setHeader("Content-Type", "text/html");
+    var success = req.query.success;
+    var error = req.query.error;
+    res.render('add-recipe', {
+      user: req.session.user,
+      success: success,
+      error: error,
+    });
+  }
+  else {
+    res.redirect('/');
+  }
 })
 
 .post('/add-recipe', upload.single('image'), function (req, res) {
-  if (req.body.title != undefined && req.body.title != "" &&
+  if (req.session.user != undefined &&
+      req.body.title != undefined && req.body.title != "" &&
       req.body.content != undefined && req.body.content != "" &&
       req.file != undefined) {
     fs.readFile(req.file.path, function(err, data) {
       if (err) res.redirect('/add-recipe?error=true');
       else {
-        new Recipe({title: req.body.title, content: req.body.content, image: {data: data, contentType: req.file.mimetype}, views: 0, rates: 0})
+        new Recipe({title: req.body.title, content: req.body.content, image: {data: data, contentType: req.file.mimetype}, views: 0, rates: 0, user: req.session.user.mail})
         .save(function (err, obj) {
             if (err) res.redirect('/add-recipe?error=true');
             else res.redirect('/add-recipe?success=true');

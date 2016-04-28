@@ -59,7 +59,9 @@
             <li class="active"><a href="top-viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
             <li><a href="top-rated">Recettes les mieux notées</a></li>
             <li><a href="search">Recherche</a></li>
+            <% if (user != undefined) { %>
             <li><a href="add-recipe">Ajouter</a></li>
+            <% } %>
           </ul>
         </div>
       </div>
@@ -95,8 +97,9 @@
               <div class="col-sm-4">
                 <img src="recipe/image/<%= recipes[i]._id %>" data-src="recipe/image/<%= recipes[i]._id %>" id="imgCoup2Coeur" alt="<%= recipes[i].title %>" class="lazy-loaded" height="150px"/>
               </div>
-              <h3 class="vote col-sm-4"><a href="recipe/<%= recipes[i]._id %>"><%= recipes[i].title %></a></h3>
-              <div class="vote col-sm-4">
+              <h3 class="vote col-sm-2"><a href="recipe/<%= recipes[i]._id %>"><%= recipes[i].title %></a></h3>
+              <div class="col-sm-3">by <strong><%= recipes[i].user == undefined ? "anonymous" : recipes[i].user %></strong></div>
+              <div class="vote col-sm-3">
                 <% if (user != undefined) { %>
                 <span class="score"><%= recipes[i].rates %></span>
                 <form action="recipe/rate/more" method="POST" style="display: inline">

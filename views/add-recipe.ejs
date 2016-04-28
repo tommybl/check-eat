@@ -59,7 +59,9 @@
             <li><a href="top-viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
             <li><a href="top-rated">Recettes les mieux notées</a></li>
             <li><a href="search">Recherche</a></li>
+            <% if (user != undefined) { %>
             <li class="active"><a href="add-recipe">Ajouter</a></li>
+            <% } %>
           </ul>
         </div>
       </div>
