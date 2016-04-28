@@ -37,22 +37,29 @@
           <a class="navbar-brand" href="/">Check-Eat</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+          <% if (user != undefined) { %>
           <div class="navbar-form navbar-right user_info">
-            Bonjour XXXX <a href="my-top" class="btn my_top_btn">Mes recettes favorites</a>
+            Bonjour <strong><%= user.mail %></strong> &nbsp; <a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+            <a href="my-top" class="btn my_top_btn">Mes recettes favorites</a>
           </div>
-          <form class="navbar-form navbar-right">
+          <% } else { %>
+          <form class="navbar-form navbar-right" method="POST" action="login">
+            <input type="hidden" name="redirect" value="/search">
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+              <input type="text" placeholder="Email" name="mail" class="form-control" required>
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" name="password" class="form-control" required>
             </div>
-             <button type="submit" class="btn btn-success">Se connecter</button>
+            <button type="submit" class="btn btn-success">Se connecter</button>
             <p class="register_slogan">Vous n'avez pas de compte ? <a href="register">Créer en un dès maintenant</a></p>
           </form>
+          <% } %>
           <ul class="nav navbar-nav menu">
-            <li class="active"><a href="top_viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
+            <li><a href="top-viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
             <li><a href="top-rated">Recettes les mieux notées</a></li>
+            <li class="active"><a href="search">Recherche</a></li>
+            <li><a href="add-recipe">Ajouter</a></li>
           </ul>
         </div>
       </div>
@@ -62,41 +69,66 @@
     <div class="jumbotron">
       <div class="container">
         <div class="padding_top col-sm-7">
+          <% if (success != undefined) { %>
           <div class="alert alert-success" role="alert">
             <strong>Bienvenue!</strong> Vous pouvez maintenant vous rendre sur votre compte
           </div>
+          <% } if (error != undefined) { %>
           <div class="alert alert-danger" role="alert">
             <strong>Oups!</strong> Une erreur est survenue : 
-            <span>Mot de passe incorrect pour cet utilisateur</span>
-            <span>Utilisateur incorrect</span>
+            <span>Compte utilisateur incorrect</span>
           </div>
+          <% } %>
         </div>
         <h1>Recherche</h1>
-        <p>Voici les résultats pour la recherche XXXXXX.</p>
+        <p>Voici les résultats pour la recherche "<%= search %>".</p>
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div><h4>La recherche n'a donné aucune résultat</h4></div>
-        <div class="form-group">
+        <form class="form-group" action="search" method="GET">
           <div class="col-sm-11 search_bar">
-            <input type="text" placeholder="Nom de la recette" class="form-control">
+            <input type="text" name="query" placeholder="Nom de la recette" class="form-control">
           </div>
           <button type="submit" class="col-sm-1 btn btn-success">Rechercher</button>
-        </div>
+        </form>
       </div>
       <hr>
       <div>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <div class="col-sm-4">
-              <img src="http://images.cuisineaz.com/400x320/001abdeb-fa9e-4477-a865-7056526cc6a3.JPG" data-src="http://images.cuisineaz.com/400x320/001abdeb-fa9e-4477-a865-7056526cc6a3.JPG" id="imgCoup2Coeur" alt="Quiche aux poireaux et au jambon facile" class="lazy-loaded" height="150px"/>
-            </div>
-            <h3 class="vote col-sm-4"><a href="#">Quiche aux poireaux</a></h3>
-          </li>
-        </ul>
+        <% if (recipes.length) { %>
+          <ul class="list-group">
+          <% for(var i = 0; i < recipes.length; i++) { %>
+            <li class="list-group-item">
+              <div class="col-sm-4">
+                <img src="recipe/image/<%= recipes[i]._id %>" data-src="recipe/image/<%= recipes[i]._id %>" id="imgCoup2Coeur" alt="<%= recipes[i].title %>" class="lazy-loaded" height="150px"/>
+              </div>
+              <h3 class="vote col-sm-4"><a href="recipe/<%= recipes[i]._id %>"><%= recipes[i].title %></a></h3>
+              <div class="vote col-sm-4">
+                <% if (user != undefined) { %>
+                <span class="score"><%= recipes[i].rates %></span>
+                <form action="recipe/rate/more" method="POST" style="display: inline">
+                  <input type="hidden" name="recipe" value="<%= recipes[i]._id %>">
+                  <input type="hidden" name="redirect" value="/search?query=<%= search %>&">
+                  <button type="submit" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></button>
+                </form>
+                <form action="recipe/rate/less" method="POST" style="display: inline">
+                  <input type="hidden" name="recipe" value="<%= recipes[i]._id %>">
+                  <input type="hidden" name="redirect" value="/search?query=<%= search %>&">
+                  <button type="submit" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></button>
+                </form>&nbsp; &nbsp;
+                <% } else { %>
+                <span><strong>Note:</strong> <%= recipes[i].rates %></span>&nbsp; &nbsp;
+                <% } %>
+                <span><strong>Views:</strong> <%= recipes[i].views %></span>
+              </div>
+            </li>
+          <% } %>
+          </ul>
+        <% } else { %>
+          <p>La recherche n'a donné aucun résultats.</p>
+        <% } %>
       </div>
 
       <hr>

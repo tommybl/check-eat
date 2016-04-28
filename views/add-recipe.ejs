@@ -10,11 +10,11 @@
 
     <title>Check-Eat</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="../jumbotron.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
 
-    <script src="../js/jquery-1.12.3.min.js"></script>
+    <script src="js/jquery-1.12.3.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,11 +40,11 @@
           <% if (user != undefined) { %>
           <div class="navbar-form navbar-right user_info">
             Bonjour <strong><%= user.mail %></strong> &nbsp; <a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
-            <a href="../my-top" class="btn my_top_btn">Mes recettes favorites</a>
+            <a href="my-top" class="btn my_top_btn">Mes recettes favorites</a>
           </div>
           <% } else { %>
-          <form class="navbar-form navbar-right" method="POST" action="../login">
-            <input type="hidden" name="redirect" value="/recipe/<%= recipe._id %>">
+          <form class="navbar-form navbar-right" method="POST" action="login">
+            <input type="hidden" name="redirect" value="/top-rated">
             <div class="form-group">
               <input type="text" placeholder="Email" name="mail" class="form-control" required>
             </div>
@@ -56,17 +56,15 @@
           </form>
           <% } %>
           <ul class="nav navbar-nav menu">
-            <li><a href="../top-viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
-            <li><a href="../top-rated">Recettes les mieux notées</a></li>
-            <li><a href="../search">Recherche</a></li>
-            <li><a href="../add-recipe">Ajouter</a></li>
+            <li><a href="top-viewed">Recettes les plus consultées<span class="sr-only">(current)</span></a></li>
+            <li><a href="top-rated">Recettes les mieux notées</a></li>
+            <li><a href="search">Recherche</a></li>
+            <li class="active"><a href="add-recipe">Ajouter</a></li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron recipe">
+    <div class="jumbotron">
       <div class="container">
         <div class="padding_top col-sm-7">
           <% if (success != undefined) { %>
@@ -75,45 +73,40 @@
           </div>
           <% } if (error != undefined) { %>
           <div class="alert alert-danger" role="alert">
-            <strong>Oups!</strong> Une erreur est survenue : 
-            <span>Compte utilisateur incorrect</span>
+            <strong>Oups!</strong> Une erreur est survenue
           </div>
           <% } %>
         </div>
-        <div class="col-sm-10">
-          <h1><%= recipe.title %></h1>
-        </div>
-        <div class="score col-sm-2">
-          <% if (user != undefined) { %>
-          <span class="score"><%= recipe.rates %></span>
-          <form action="../recipe/rate/more" method="POST" style="display: inline">
-            <input type="hidden" name="recipe" value="<%= recipe._id %>">
-            <input type="hidden" name="redirect" value="/recipe/<%= recipe._id %>">
-            <button type="submit" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></button>
-          </form>
-          <form action="../recipe/rate/less" method="POST" style="display: inline">
-            <input type="hidden" name="recipe" value="<%= recipe._id %>">
-            <input type="hidden" name="redirect" value="/recipe/<%= recipe._id %>">
-            <button type="submit" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></button>
-          </form><br>
-          <% } else { %>
-          <span><%= recipe.rates %> <strong>notes</strong></span><br>
-          <% } %>
-          <span><%= recipe.views %> <strong>views</strong></span>
-        </div>
+        <h1>Ajouter une recette</h1>
+        <p>Vous pouvez ici ajouter une recette.</p>
       </div>
     </div>
-
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-sm-5">
-          <img src="../recipe/image/<%= recipe._id %>"/>
+      <form method="POST" action="add-recipe" enctype="multipart/form-data">
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 form-control-label">Titre</label>
+          <div class="col-sm-10">
+            <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="Titre" required>
+          </div>
         </div>
-        <div class="col-sm-7">
-          <%= recipe.content %>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 form-control-label">Description</label>
+          <div class="col-sm-10">
+            <textarea name="content" class="form-control" id="inputPassword3" placeholder="Description" required></textarea>
+          </div>
         </div>
-      </div>
+        <div class="form-group row">
+          <label for="inputImage3" class="col-sm-2 form-control-label">Image</label>
+          <div class="col-sm-10">
+            <input type="file" name="image" accept="image/*" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-secondary">Ajouter</button>
+          </div>
+        </div>
+      </form>
 
       <hr>
 
@@ -123,8 +116,8 @@
     </div> <!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
